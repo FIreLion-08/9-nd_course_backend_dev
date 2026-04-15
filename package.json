@@ -1,0 +1,16 @@
+{
+  "name": "9-nd_course_backend_dev",
+  "version": "1.0.0",
+  "description": "Модуль_№9_Знакомство_с_бекенд_разработкой",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
