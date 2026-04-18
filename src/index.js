@@ -19,13 +19,13 @@ const server = http.createServer((request, response) => {
     response.statusCode = 200;
     response.statusMessage = "OK";
     response.setHeader("Content-Type", "text/plain");
-    response.write(`Hello, ${userName}`);
+    response.write(`Hello, ${userName}.`);
     response.end();
     return;
   } else {
     switch (request.url) { 
-      case "/?hello":
-        response.status = 400;
+      case "/?hello=":
+        response.statusCode = 400;
         response.statusMessage = "Bad Request";
         response.header = "Content-Type: text/plain";
         response.write("Enter a name");
@@ -33,7 +33,7 @@ const server = http.createServer((request, response) => {
         break;
 
       case "/?users":
-        response.status = 200;
+        response.statusCode = 200;
         response.statusMessage = "OK";
         response.header = "Content-Type: application/json";
         response.write(getUsers());
@@ -41,18 +41,18 @@ const server = http.createServer((request, response) => {
         break;
 
       case "/":
-        response.status = 200;
+        response.statusCode = 200;
         response.statusMessage = "OK";
         response.header = "Content-Type: text/plain";
-        response.write("Hello, world");
+        response.write("Hello, World!");
         response.end();
         break;
 
       default:
-        response.status = 500;
+        response.statusCode = 500;
         response.statusMessage = "Internal Server Error";
         response.header = "Content-Type: text/plain";
-        response.write("");
+        response.write("Некоретные параметры");
         response.end();
         break;
     }
