@@ -20,6 +20,11 @@ const helloWorld = (request, response) => {
     response.send("Hello, World!");
 };
 
+app.use(loggerOne);
+// app.use(loggerTwo);
+
+// app.use(bodyParser.json());
+
 app.get('/', helloWorld);
 
 app.post('/', (request, response) => {
@@ -28,11 +33,6 @@ app.post('/', (request, response) => {
 });
 
 app.use(cors);
-
-app.use(loggerOne);
-// app.use(loggerTwo);
-
-// app.use(bodyParser.json());
 
 // app.get('/users/34', (request, response) => {
 //     response.status(200);
