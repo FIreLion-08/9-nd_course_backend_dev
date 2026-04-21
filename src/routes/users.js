@@ -1,16 +1,21 @@
-const router = require('express').Router();
-const loggerTwo = require("../middlewares/loggerTwo");
+const router = require("express").Router();
+const loggerOne = require("../middlewares/loggerOne");
+// const loggerTwo = require('./middlewares/loggerTwo');
 
-const { getUsers, getUser, createUser, updateUser, deleteUser } = require('../controllers/users');
+const {
+  getUsers,
+  getUser,
+  createUser,
+  updateUser,
+  deleteUser,
+} = require("../controllers/users");
 
-// app.use(loggerTwo);
-router.use(loggerTwo);
+router.use(loggerOne);
 
-router.get('/users', getUsers);
-router.get('/users/:user_id', getUser);
-router.post('/users', createUser);
-router.patch('/users/:user_id', updateUser);
-router.delete('/users/:user_id', deleteUser);
-
+router.get("/users", getUsers);
+router.get("/users/:user_id", getUser);
+router.post("/users", createUser);
+router.put("/users/:user_id", updateUser);
+router.delete("/users/:user_id", deleteUser);
 
 module.exports = router;
