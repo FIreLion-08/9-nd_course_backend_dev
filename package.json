@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Модуль_№9_Знакомство_с_бекенд_разработкой",
   "private": true,
-  "main": "src/index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "cross-env nodemon src/app.js",
     "start": "node src/app.js"
