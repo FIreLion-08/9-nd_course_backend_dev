@@ -61,7 +61,7 @@ const deleteUser = (req, res) => {
   User.findByIdAndDelete(user_id)
     .then((user) => {
       if (!user) {
-        response.status(404).send("User is not found");
+        res.status(404).send("User is not found");
       } else {
         res.status(200).send("Done");
       }
