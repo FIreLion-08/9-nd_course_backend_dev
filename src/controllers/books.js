@@ -17,7 +17,7 @@ const getBook = (req, res) => {
   Book.findById(book_id)
     .then((book) => {
       if (!book) {
-        response.status(404).send("Book is not found");
+        res.status(404).send("Book is not found");
       } else {
         res.status(200).send(book);
       }
@@ -46,7 +46,7 @@ const updateBook = (req, res) => {
   Book.findByIdAndUpdate(book_id, data, { new: true, runValidators: true })
     .then((book) => {
       if (!book) {
-        response.status(404).send("Book is not found");
+        res.status(404).send("Book is not found");
       } else {
         res.status(200).send(book);
       }
