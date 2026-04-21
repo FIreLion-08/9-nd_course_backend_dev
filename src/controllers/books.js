@@ -62,7 +62,7 @@ const deleteBook = (req, res) => {
   Book.findByIdAndDelete(book_id)
     .then((book) => {
       if (!book) {
-        response.status(404).send("Book is not found");
+        res.status(404).send("Book is not found");
       } else {
         res.status(200).send("Done");
       }
